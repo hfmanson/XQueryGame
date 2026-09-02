@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<boxes>
-  <bigbox left="2" top="0" rotation="-90" color="black"/>
-  <bigbox left="1" top="1" rotation="0" color="blue"/>
-  <smallbox left="0" top="2" rotation="0" color="red"/>
-  <mover left="0" top="1"/>
-</boxes>

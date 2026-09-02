@@ -43,7 +43,7 @@
                 </Canvas.Resources>
             </Canvas>
         </Viewbox>
-    </Grid>
+        </Grid>
         <StackPanel x:Name="StatusPanel" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical">
             <Border x:Name="StatusBorder">
                 <!-- Use LiveSetting to enable screen readers to announce the status update. -->
