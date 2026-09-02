@@ -17,7 +17,7 @@ namespace Xslt2Game
 
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            Dictionary<string, object> dict = value as Dictionary<string, object>;
+            Dictionary<string, string> dict = value as Dictionary<string, string>;
             string key = parameter as string;
 
             if (dict != null && key != null && dict.TryGetValue(key, out var result))

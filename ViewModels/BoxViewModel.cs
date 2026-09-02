@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 public class BoxViewModel : INotifyPropertyChanged
 {
-    public Dictionary<string, object> Attributes { get; } = new Dictionary<string, object>();
+    public Dictionary<string, string> Attributes { get; } = new Dictionary<string, string>();
 
     public BoxViewModel(XElement xml)
     {
@@ -15,7 +15,7 @@ public class BoxViewModel : INotifyPropertyChanged
         }
     }
 
-    public void UpdateAttribute(string name, object value)
+    public void UpdateAttribute(string name, string value)
     {
         Attributes[name] = value;
         OnPropertyChanged(nameof(Attributes));
