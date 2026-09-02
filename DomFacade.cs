@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Xml;
+using System.Xml.Linq;
 
 namespace Xslt2Game
 {
@@ -8,30 +8,27 @@ namespace Xslt2Game
 
         public WrappedNode GetParentNode(WrappedNode wrappedNode, object bucket)
         {
-            return WrappedNode.wrap(wrappedNode.unwrap().ParentNode);
+            return WrappedNode.wrap(wrappedNode.unwrap().Parent);
         }
 
         public WrappedNode GetFirstChild(WrappedNode wrappedNode, object bucket)
         {
-            return WrappedNode.wrap(wrappedNode.unwrap().FirstChild);
+            return WrappedNode.wrap(((XContainer)wrappedNode.unwrap()).FirstNode);
         }
 
         public WrappedNode GetNextSibling(WrappedNode wrappedNode, object bucket)
         {
-            return WrappedNode.wrap(wrappedNode.unwrap().NextSibling);
+            return WrappedNode.wrap(((XContainer)wrappedNode.unwrap()).NextNode);
         }
 
         public object GetAllAttributes(WrappedNode wrappedNode, object bucket)
         {
-            var node = wrappedNode.unwrap();
+            var element = (XElement)wrappedNode.unwrap();
             var list = new List<object>();
 
-            if (node.Attributes != null)
+            foreach (XAttribute attr in element.Attributes())
             {
-                foreach (XmlAttribute attr in node.Attributes)
-                {
-                    list.Add(new WrappedNode(attr));
-                }
+                list.Add(new WrappedNode(attr));
             }
 
             return list.ToArray(); // JS array
@@ -39,25 +36,25 @@ namespace Xslt2Game
 
         public string GetAttribute(WrappedNode wrappedNode, string attrName)
         {
-            var element = (XmlElement)wrappedNode.unwrap();
-            return element.GetAttribute(attrName);
+            var element = (XElement)wrappedNode.unwrap();
+            return element.Attribute(XName.Get(attrName, "")).Value;
         }
 
         public string GetData(WrappedNode wrappedNode)
         {
             var node = wrappedNode.unwrap();
-            return node.Value;
+            return ((XText)node).Value;// node.Value;
         }
 
         public WrappedNode[] GetChildNodes(WrappedNode wrappedNode, object bucket)
         {
-            var node = wrappedNode.unwrap();
+            var container = (XContainer)wrappedNode.unwrap();
             var list = new List<WrappedNode>();
 
-            foreach (XmlNode childnode in node.ChildNodes)
-            {
-                list.Add(new WrappedNode(childnode));
-            }
+            //foreach (XmlNode childnode in node.ChildNodes)
+            //{
+            //    list.Add(new WrappedNode(childnode));
+            //}
             return list.ToArray(); // JS array
         }        
     }

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Xml;
+using System.Xml.Linq;
 
 /*
  	createAttributeNS(namespaceURI: string, name: string): Attr;
@@ -19,24 +19,19 @@ namespace Xslt2Game
 {
     public class NodesFactory
     {
-		private XmlDocument _document;
-		
-		public NodesFactory(XmlDocument xmlDocument) { _document = xmlDocument; }
-
         public WrappedNode createAttributeNS(string namespaceURI, String name)
         {
-            return WrappedNode.wrap(_document.CreateAttribute(name));
+            return WrappedNode.wrap(new XAttribute(XName.Get(name, namespaceURI), ""));
         }
 
         public WrappedNode createElementNS(string namespaceURI, String name)
         {
-            return WrappedNode.wrap(_document.CreateElement(name));
+            return WrappedNode.wrap(new XElement(XName.Get(name, namespaceURI)));
         }
 
         public WrappedNode createTextNode(String text)
         {
-            return WrappedNode.wrap(_document.CreateTextNode(text));
-           
+            return WrappedNode.wrap(new XText(text));           
         }
     }
 }

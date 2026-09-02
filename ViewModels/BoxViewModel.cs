@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Reflection;
-using System.Xml;
+using System.Xml.Linq;
 
 public class BoxViewModel : INotifyPropertyChanged
 {
     public Dictionary<string, object> Attributes { get; } = new Dictionary<string, object>();
 
-    public BoxViewModel(XmlElement xml)
+    public BoxViewModel(XElement xml)
     {
         // Load all XML attributes dynamically
-        foreach (XmlAttribute attr in xml.Attributes)
+        foreach (XAttribute attr in xml.Attributes())
         {
-            Attributes[attr.Name] = attr.Value;
+            Attributes[attr.Name.LocalName] = attr.Value;
         }
     }
 

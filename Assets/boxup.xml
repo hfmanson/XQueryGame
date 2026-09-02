@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<boxes>
-  <bigbox x="2" y="0" rotation="-90" color="black"/>
-  <bigbox x="1" y="1" rotation="0" color="blue"/>
-  <smallbox x="0" y="2" rotation="0" color="red"/>
+<boxes xmlns:boxup="http://mansoft.nl/boxup">
+  <box boxup:box-type="normal" boxup:dx="1" boxup:dy="0" x="2" y="0" rotation="-90" color="black" />
+  <box boxup:box-type="destination" x="1" y="1" rotation="0" color="blue"/>
+  <box boxup:box-type="source" x="0" y="2" rotation="0" color="red"/>
   <mover x="0" y="1"/>
 </boxes>

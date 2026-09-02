@@ -127,10 +127,15 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AttributeConverter.cs" />
+    <Compile Include="ViewModels\BoxNodeViewModel.cs" />
+    <Compile Include="ViewModels\NodeViewModelBase.cs" />
+    <Compile Include="Views\Box.xaml.cs">
+      <DependentUpon>Box.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Boxup.xaml.cs">
       <DependentUpon>Boxup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BoxViewModel.cs" />
+    <Compile Include="ViewModels\BoxViewModel.cs" />
     <Compile Include="DomFacade.cs" />
     <Compile Include="Henri.xaml.cs">
       <DependentUpon>Henri.xaml</DependentUpon>
@@ -166,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\Box.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Boxup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
