@@ -133,22 +133,24 @@
     <Compile Include="ViewModels\BoxNodeViewModels.cs" />
     <Compile Include="ViewModels\NodeViewModelBase.cs" />
     <Compile Include="ViewModels\NodeViewModelsBase.cs" />
-    <Compile Include="Views\BoxControl.xaml.cs">
-      <DependentUpon>BoxControl.xaml</DependentUpon>
+    <Compile Include="Views\BigBoxControl.xaml.cs">
+      <DependentUpon>BigBoxControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Boxup.xaml.cs">
       <DependentUpon>Boxup.xaml</DependentUpon>
     </Compile>
     <Compile Include="DomFacade.cs" />
-    <Compile Include="Henri.xaml.cs">
-      <DependentUpon>Henri.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="NodesFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ExtendedContentControl.cs" />
+    <Compile Include="Views\MoverControl.xaml.cs">
+      <DependentUpon>MoverControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SmallBoxControl.xaml.cs">
+      <DependentUpon>SmallBoxControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WrappedNode.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -173,7 +175,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\BoxControl.xaml">
+    <Page Include="Views\BigBoxControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,13 +183,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Henri.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MoverControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SmallBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

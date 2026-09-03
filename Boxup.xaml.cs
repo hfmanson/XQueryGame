@@ -1,18 +1,6 @@
-﻿using Acornima.Ast;
-using Jint;
-using Jint.Native;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Xml.Linq;
-using Windows.Media.Editing;
-using Windows.UI;
+﻿using System.Xml.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Markup;
-using Windows.UI.Xaml.Media;
 using Xslt2Game.EngineJS;
 using Xslt2Game.ViewModels;
 
