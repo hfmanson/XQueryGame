@@ -163,8 +163,23 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\boxup.xml" />
+    <Content Include="Assets\boxup10.xml" />
+    <Content Include="Assets\boxup11.xml" />
+    <Content Include="Assets\boxup12.xml" />
+    <Content Include="Assets\boxup13.xml" />
+    <Content Include="Assets\boxup14.xml" />
+    <Content Include="Assets\boxup15.xml" />
+    <Content Include="Assets\boxup16.xml" />
+    <Content Include="Assets\boxup17.xml" />
+    <Content Include="Assets\boxup2.xml" />
     <Content Include="Assets\boxup1.xml" />
+    <Content Include="Assets\boxup3.xml" />
+    <Content Include="Assets\boxup4.xml" />
+    <Content Include="Assets\boxup5.xml" />
+    <Content Include="Assets\boxup6.xml" />
+    <Content Include="Assets\boxup7.xml" />
+    <Content Include="Assets\boxup8.xml" />
+    <Content Include="Assets\boxup9.xml" />
     <Content Include="EngineJS\fontoxpath.js" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

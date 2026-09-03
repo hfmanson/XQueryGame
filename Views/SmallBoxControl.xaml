@@ -6,7 +6,7 @@
     Canvas.Left="{x:Bind ViewModel.Left, Mode=OneWay}"
     Canvas.Top="{x:Bind ViewModel.Top, Mode=OneWay}">
     <Polyline Points="0.225,0.225 0.225,0.8 0.8,0.8 0.8,0.225" 
-              Stroke="red" 
+              Stroke="{x:Bind ViewModel.Stroke, Mode=OneWay}" 
               StrokeThickness="0.075">
 
         <Polyline.RenderTransform>

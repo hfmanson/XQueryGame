@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<boxup xmlns="http://mansoft.nl/boxup" rows="4" columns="4">
+   <box box-type="normal" column="2" row="1" dx="1" dy="0" depth="1"/>
+   <box box-type="destination" column="3" row="1" dx="0" dy="-1" depth="1"/>
+   <box box-type="normal" column="1" row="2" dx="0" dy="-1" depth="1"/>
+   <mover column="2" row="2"/>
+   <box box-type="normal" column="3" row="2" dx="1" dy="0" depth="2"/>
+   <box box-type="normal" column="4" row="2" dx="0" dy="1" depth="2"/>
+   <box box-type="source" column="1" row="3" dx="-1" dy="0" depth="2"/>
+   <box box-type="normal" column="2" row="3" dx="0" dy="1" depth="2"/>
+   <box box-type="normal" column="3" row="3" dx="0" dy="1" depth="1"/>
+   <box box-type="normal" column="4" row="3" dx="1" dy="0" depth="1"/>
+   <box box-type="normal" column="2" row="4" dx="0" dy="1" depth="1"/>
+   <box box-type="normal" column="3" row="4" dx="0" dy="1" depth="2"/>
+</boxup>

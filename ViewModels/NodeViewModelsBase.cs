@@ -14,7 +14,7 @@ namespace Xslt2Game.ViewModels
     {
         private readonly Dictionary<XAttribute, NodeViewModelBase> _attributeModels = new Dictionary<XAttribute, NodeViewModelBase>();
 
-        public abstract XDocument LoadGame(Canvas game);
+        public abstract XDocument LoadGame(Canvas game, int level);
 
         private void Document_Changed(object sender, XObjectChangeEventArgs e)
         {

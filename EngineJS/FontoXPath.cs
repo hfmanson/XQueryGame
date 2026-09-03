@@ -10,13 +10,12 @@ namespace Xslt2Game.EngineJS
     public class FontoXPath
     {
         private static Engine _engine;
-        public FontoXPath(XDocument document)
+        public FontoXPath()
         {
             _engine = new Engine(options => {
                 options.AllowClr();
                 //options.AddExtensionMethods(typeof(Extension));
             });
-            _engine.SetValue("xmlDocument", new WrappedNode(document));
             _engine.SetValue("myDomFacade", new DomFacade());
             _engine.SetValue("nodesFactory", new NodesFactory());
             //_engine.SetValue("documentWriter", new DocumentWriter());
@@ -29,6 +28,11 @@ namespace Xslt2Game.EngineJS
 
             var basePath = AppContext.BaseDirectory;
             _engine.Execute(File.ReadAllText(Path.Combine(basePath, "EngineJS", "fontoxpath.js")));
+        }
+
+        public void SetDocument(XDocument document)
+        {
+            _engine.SetValue("xmlDocument", new WrappedNode(document));
         }
 
         public object testJS(string javascript)

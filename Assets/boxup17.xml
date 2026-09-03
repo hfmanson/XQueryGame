@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<boxup xmlns="http://mansoft.nl/boxup" rows="6" columns="2">
+   <box box-type="normal" column="1" row="1" dx="-1" dy="0" depth="2"/>
+   <mover column="2" row="2"/>
+   <box box-type="normal" column="2" row="3" dx="0" dy="1" depth="1"/>
+   <box box-type="normal" column="1" row="4" dx="-1" dy="0" depth="2"/>
+   <box box-type="normal" column="2" row="4" dx="0" dy="1" depth="1"/>
+</boxup>

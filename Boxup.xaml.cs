@@ -14,10 +14,16 @@ namespace Xslt2Game
     public sealed partial class Boxup : Page
     {
         private double _width;
+
         private double _height;
+
         private XDocument _document;
+
         private NodeViewModelsBase _NodeViewModels;
+
         private FontoXPath _fontoXPath;
+
+        private int _level;
 
         private static string module = @"
 module namespace boxup=""http://mansoft.nl/boxup"";
@@ -91,15 +97,26 @@ return
         public Boxup()
         {
             InitializeComponent();
+            _fontoXPath = new FontoXPath();
+            _fontoXPath.registerXQueryModule(module);
+            _level = 1;
+            loadLevel();
+        }
+        
+        public void loadLevel()
+        {
+            game.Children.Clear();
             _NodeViewModels = new BoxNodeViewModels();
-            _document = _NodeViewModels.LoadGame(game);
+            _document = _NodeViewModels.LoadGame(game, _level);
             XElement root = _document.Root;
             Width = double.Parse(root.Attribute("columns").Value) + 0.2;
             Height = double.Parse(root.Attribute("rows").Value) + 0.2;
-            _fontoXPath = new FontoXPath(_document);
-            _fontoXPath.registerXQueryModule(module);
+
+            game.Width = Width;
+            game.Height = Height;
+            _fontoXPath.SetDocument(_document);
         }
-        
+
         private void boxupMove(int dx, int dy)
         {
             _fontoXPath.testUpdateXQuery($"boxup:check-move(., {dx}, {dy})", "boxup", "http://mansoft.nl/boxup");
@@ -126,6 +143,24 @@ return
             else if (args.VirtualKey == VirtualKey.Down)
             {
                 boxupMove(0, 1);
+                args.Handled = true;
+            }
+            else if (args.VirtualKey == VirtualKey.P)
+            {
+                if (_level > 1)
+                {
+                    _level--;
+                    loadLevel();
+                }
+                args.Handled = true;
+            }
+            else if (args.VirtualKey == VirtualKey.N)
+            {
+                if (_level < 17)
+                {
+                    _level++;
+                    loadLevel();
+                }
                 args.Handled = true;
             }
         }

@@ -9,20 +9,18 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="White">
+        <Grid  Grid.Row="0" Grid.Column="0" Background="White">
         <Viewbox x:Name="Viewbox" Stretch="Uniform">
-            <Canvas x:Name="game" Width="{x:Bind Width}" Height="{x:Bind Height}"/>
+                <Canvas x:Name="game" Width="{x:Bind Width, Mode=OneWay}" Height="{x:Bind Height, Mode=OneWay}"/>
         </Viewbox>
         </Grid>
-        <StackPanel x:Name="StatusPanel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical">
+        <StackPanel x:Name="StatusPanel" Grid.Row="1" Grid.Column="0" Orientation="Vertical">
             <Border x:Name="StatusBorder">
                 <!-- Use LiveSetting to enable screen readers to announce the status update. -->
                 <TextBlock x:Name="StatusBlock" FontWeight="Bold" AutomationProperties.LiveSetting="Assertive" Foreground="White"/>
