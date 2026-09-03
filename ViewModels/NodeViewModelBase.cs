@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Xml.Linq;
 
 namespace Xslt2Game.ViewModels
 {
@@ -12,5 +13,7 @@ namespace Xslt2Game.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public abstract void UpdateField(string AttrName, string AttrValue);
     }
 }
