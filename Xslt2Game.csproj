@@ -129,6 +129,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="EngineJS\FontoXPath.cs" />
+    <Compile Include="NotifyPropertyChanged.cs" />
     <Compile Include="ViewModels\BoxNodeViewModel.cs" />
     <Compile Include="ViewModels\BoxNodeViewModels.cs" />
     <Compile Include="ViewModels\NodeViewModelBase.cs" />
@@ -145,6 +146,9 @@
     </Compile>
     <Compile Include="NodesFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\BlockControl.xaml.cs">
+      <DependentUpon>BlockControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MoverControl.xaml.cs">
       <DependentUpon>MoverControl.xaml</DependentUpon>
     </Compile>
@@ -160,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\boxup.xml" />
+    <Content Include="Assets\boxup1.xml" />
     <Content Include="EngineJS\fontoxpath.js" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -186,6 +191,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BlockControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MoverControl.xaml">
       <SubType>Designer</SubType>

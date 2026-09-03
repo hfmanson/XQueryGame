@@ -35,9 +35,19 @@ namespace Xslt2Game.ViewModels
                 }
                 else
                 {
-                    MoverControl moverControl = new MoverControl();
-                    moverControl.ViewModel = model;
-                    control = moverControl;
+                    string LocalName = element.Name.LocalName;
+                    if (LocalName == "mover")
+                    {
+                        MoverControl moverControl = new MoverControl();
+                        moverControl.ViewModel = model;
+                        control = moverControl;
+                    }
+                    else
+                    {
+                        BlockControl blockControl = new BlockControl();
+                        blockControl.ViewModel = model;
+                        control = blockControl;
+                    }
                 }
                 game.Children.Add(control);
             }
