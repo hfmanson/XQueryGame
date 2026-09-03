@@ -1,12 +1,8 @@
 ﻿using Jint;
 using Jint.Native;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace Xslt2Game.EngineJS
@@ -63,15 +59,24 @@ namespace Xslt2Game.EngineJS
             }
         }
 
-        public object testXQuery(string xquery)
+        public object registerXQueryModule(string module)
         {
-            return testJS($"fontoxpath.evaluateXPath('{xquery}', xmlDocument, myDomFacade, null, null);");
+            return testJS($"fontoxpath.registerXQueryModule(`{module}`);");
         }
 
+        public object testXQuery(string xquery)
+        {
+            return testJS($"fontoxpath.evaluateXPath(`{xquery}`, xmlDocument, myDomFacade, null, null);");
+        }
 
         public object testUpdateXQuery(string xquf)
         {
             return testJS($"fontoxpath.executePendingUpdateList(fontoxpath.evaluateUpdatingExpressionSync(`{xquf}`, xmlDocument, myDomFacade, null, {{ nodesFactory: nodesFactory }}).pendingUpdateList);");
+        }
+
+        public object testUpdateXQuery(string xquf, string prefix, string namespaceURI)
+        {
+            return testJS($"fontoxpath.executePendingUpdateList(fontoxpath.evaluateUpdatingExpressionSync(`{xquf}`, xmlDocument, myDomFacade, null, {{ nodesFactory: nodesFactory, moduleImports: {{ {prefix}: '{namespaceURI}' }} }}).pendingUpdateList);");
         }
     }
 }

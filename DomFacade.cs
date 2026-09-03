@@ -43,7 +43,7 @@ namespace Xslt2Game
         public string GetData(WrappedNode wrappedNode)
         {
             var node = wrappedNode.unwrap();
-            return ((XText)node).Value;// node.Value;
+            return node is XText text ? text.Value : node is XAttribute attr ? attr.Value : null;
         }
 
         public WrappedNode[] GetChildNodes(WrappedNode wrappedNode, object bucket)
